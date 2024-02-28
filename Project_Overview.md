@@ -8,14 +8,14 @@ I have created an Instagram dummy database clone, incorporating various tables s
 - MySQL
 
 ## Database Schema
-- Users Table
+Users Table
 | Column    | Data Type           | Constraints                 |
 |-----------|---------------------|-----------------------------|
 | id        | INTEGER             | AUTO_INCREMENT, PRIMARY KEY |
 | username  | VARCHAR(100)        | UNIQUE, NOT NULL            |
 | created_at| TIMESTAMP           | DEFAULT NOW()               |
 
-- Photos Table
+Photos Table
 | Column      | Data Type           | Constraints                        |
 |-------------|---------------------|------------------------------------|
 | id          | INTEGER             | AUTO_INCREMENT, PRIMARY KEY        |
@@ -23,7 +23,7 @@ I have created an Instagram dummy database clone, incorporating various tables s
 | user_id     | INTEGER             | NOT NULL, FOREIGN KEY (Users.id)   |
 | created_at  | TIMESTAMP           | DEFAULT NOW()                      |
 
-- Comments Table
+Comments Table
 | Column        | Data Type           | Constraints                            |
 |---------------|---------------------|----------------------------------------|
 | id            | INTEGER             | AUTO_INCREMENT, PRIMARY KEY            |
@@ -32,14 +32,14 @@ I have created an Instagram dummy database clone, incorporating various tables s
 | created_at    | TIMESTAMP           | DEFAULT NOW()                          |
 | user_id       | INTEGER             | NOT NULL, FOREIGN KEY (Users.id)       |
 
-- Likes Table
+Likes Table
 | Column      | Data Type           | Constraints                        |
 |-------------|---------------------|------------------------------------|
 | user_id     | INTEGER             | NOT NULL, FOREIGN KEY (Users.id)   |
 | photo_id    | INTEGER             | NOT NULL, FOREIGN KEY (Photos.id)  |
 | created_at  | TIMESTAMP           | DEFAULT NOW()                      |
 
-- Follows Table
+Follows Table
 | Column         | Data Type           | Constraints                            |
 |----------------|---------------------|----------------------------------------|
 | follower_id    | INTEGER             | NOT NULL, FOREIGN KEY (Users.id)       |
@@ -47,14 +47,14 @@ I have created an Instagram dummy database clone, incorporating various tables s
 | created_at     | TIMESTAMP           | DEFAULT NOW()                          |
 | PRIMARY KEY    | (follower_id, followee_id) |                                     |
 
-- Tags Table
+Tags Table
 | Column      | Data Type           | Constraints                        |
 |-------------|---------------------|------------------------------------|
 | id          | INTEGER             | AUTO_INCREMENT, PRIMARY KEY        |
 | tag_name    | VARCHAR(100)        | UNIQUE                             |
 | created_at  | TIMESTAMP           | DEFAULT NOW()                      |
 
-- Photo Tags Table
+Photo Tags Table
 | Column      | Data Type           | Constraints                             |
 |-------------|---------------------|-----------------------------------------|
 | photo_id    | INTEGER             | NOT NULL, FOREIGN KEY (Photos.id)       |
